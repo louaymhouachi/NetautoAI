@@ -1,0 +1,6 @@
+hostname {{ device_name }}
+{% for vlan_name, data in networks.items()%}
+vlan {{data.vlan_id }}
+name {{ vlan_name }}
+{% endfor %}
+

@@ -1,0 +1,22 @@
+{
+    "site_name": "site1",
+    "main_network": "192.168.0.0/16",
+    "devices": [
+        {
+            "name": "core1",
+            "type": "core",
+            "ip": "192.168.1.10"
+
+        },
+        {
+            "name": "access1",
+            "type": "access",
+            "ip": "192.168.1.20"
+        }
+    ],
+    "vlans": [
+        {"name": "ADMIN"},
+        {"name": "PROD"},
+        {"name": "CAMERA"}
+    ]
+}

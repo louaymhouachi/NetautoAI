@@ -1,0 +1,9 @@
+- name: Deploy configuration
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Push config
+      copy:
+        src: "../generated_configs/{{ inventory_hostname }}.cfg"
+        dest: "/tmp/{{ inventory_hostname }}.cfg"
