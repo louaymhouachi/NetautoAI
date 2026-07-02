@@ -1,135 +1,95 @@
-# NetAutoAI
+## 📌 Features
 
-## Overview
-
-NetAutoAI is an AI-powered network automation and security auditing platform designed to simplify the analysis of Cisco network configurations. The application automatically analyzes network devices, detects configuration issues, evaluates security best practices, and generates comprehensive reports with AI-assisted recommendations.
-
-The goal of NetAutoAI is to reduce the time required for manual network audits while improving configuration accuracy and security compliance.
-
----
-
-## Features
-
-### Device Discovery
-- Automatically discover Cisco devices on the network.
-- Retrieve device information through SSH.
-- Support for multiple network devices.
-
-### Configuration Analysis
-- Parse Cisco configuration files.
-- Analyze:
-  - VLAN configuration
-  - Trunk interfaces
-  - Access interfaces
-  - Routing protocols
-  - Access Control Lists (ACLs)
-  - Interface configurations
-  - Port security
-  - Password configurations
-  - Management settings
-
-### Security Audit
-Detect common security issues such as:
-- Telnet enabled
-- Weak password encryption
-- Missing SSH configuration
-- Unsecured VTY lines
-- Missing banners
-- Insecure management access
-- Unused interfaces left active
-- Missing port security
-- ACL inconsistencies
-- Routing configuration issues
-
-### AI Report Generation
-- Generate human-readable reports using Artificial Intelligence.
-- Explain detected issues.
-- Recommend remediation steps.
-- Prioritize security findings.
-
-### Dashboard
-- Modern web interface.
-- Device management.
-- Configuration upload.
-- Analysis history.
-- Generated reports.
+- 🔍 Network configuration analysis
+- ⚙️ Automated configuration validation
+- 🛡️ Security compliance checking
+- 🌐 Multi-vendor configuration support
+- 📊 Interactive dashboard
+- 📄 Automatic report generation
+- 🚨 Detection of configuration issues
+- 🔄 Configuration comparison
+- 📈 Network statistics and visualization
+- 👤 User authentication and role management
 
 ---
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 ### Backend
 - Python
 - Flask
-- Paramiko
-- Netmiko
-- TextFSM
 - SQLite
+- REST API
 
 ### Frontend
 - HTML5
 - CSS3
-- JavaScript
-- Bootstrap
+- pyside6
 
-### AI
-- OpenAI API
+### Network Automation
+- Netmiko
+- Paramiko
+- Cisco Configuration Parsing
+- SSH Automation
 
-### Networking
-- Cisco IOS
-- SSH
-
-### Virtualization
-- VMware Workstation
-- GNS3
-
----
-
-## Project Architecture
-
-```
-                +------------------+
-                | Web Interface    |
-                +--------+---------+
-                         |
-                         |
-                 Flask Backend
-                         |
-     +-------------------+------------------+
-     |                   |                  |
- Device Discovery   Config Parser    AI Report Engine
-     |                   |                  |
-     +-------------------+------------------+
-                         |
-                    SQLite Database
-```
+### Data Processing
+- JSON
+- Regular Expressions
+- Configuration Parsing Engine
 
 ---
 
-## Installation
+## 📂 Project Structure
+
+```
+NetAutoAI/
+│
+├── app.py
+├── requirements.txt
+├── config.py
+├── database/
+├── static/
+│   ├── css/
+│   ├── js/
+│   └── images/
+├── templates/
+├── uploads/
+├── reports/
+├── analyzer/
+├── automation/
+├── models/
+└── README.md
+```
+
+---
+
+## ⚡ Installation
 
 ### Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/netautoai.git
-cd netautoai
+git clone https://github.com/louaymhouachi/pfe_project-.git
+```
+
+### Navigate to the project
+
+```bash
+cd pfe_project-
 ```
 
 ### Create a virtual environment
 
-```bash
-python -m venv venv
-```
-
 Windows
 
 ```bash
+python -m venv venv
 venv\Scripts\activate
 ```
 
-Linux
+Linux / macOS
 
 ```bash
+python3 -m venv venv
 source venv/bin/activate
 ```
 
@@ -147,100 +107,97 @@ python app.py
 
 ---
 
-## Project Structure
+## 🎯 Main Modules
+
+### Configuration Analyzer
+
+Analyzes Cisco device configurations and extracts:
+
+- Hostname
+- VLANs
+- Trunk Ports
+- Access Ports
+- Routing Configuration
+- ACLs
+- Interfaces
+- DHCP Configuration
+- DNS Settings
+- NAT Configuration
+
+---
+
+### Security Validator
+
+Checks for:
+
+- Weak passwords
+- Telnet enabled
+- Missing SSH configuration
+- Unused VLANs
+- Insecure services
+- Missing ACL protection
+- Configuration inconsistencies
+
+---
+
+### Report Generator
+
+Generates professional reports including:
+
+- Executive Summary
+- Device Information
+- Network Overview
+- VLAN Analysis
+- Routing Analysis
+- ACL Analysis
+- Security Findings
+- Recommendations
+
+---
+
+## 📸 Screenshots
+
+Add screenshots here.
+
+Example:
 
 ```
-NetAutoAI/
-│
-├── app.py
-├── requirements.txt
-├── config.py
-├── database/
-├── templates/
-├── static/
-├── reports/
-├── parser/
-├── analyzer/
-├── ai/
-├── uploads/
-├── models/
-├── utils/
-└── README.md
+docs/dashboard.png
+docs/report.png
+docs/login.png
 ```
 
 ---
 
-## Example Workflow
+## 👨‍💻 Authors
 
-1. Connect to a Cisco device.
-2. Retrieve its running configuration.
-3. Parse the configuration.
-4. Perform security analysis.
-5. Detect misconfigurations.
-6. Generate an AI-powered report.
-7. Display results through the web dashboard.
+- Louay Mhouachi
+- Rawen Khaddar
+
+Final Year Project (PFE)
 
 ---
 
-## Example Security Checks
+## 🎓 Academic Context
 
-| Category | Check |
-|----------|-------|
-| SSH | SSH enabled |
-| Telnet | Telnet disabled |
-| Passwords | Password encryption enabled |
-| VLAN | Native VLAN configuration |
-| Trunks | Allowed VLAN verification |
-| Interfaces | Unused ports shutdown |
-| ACL | ACL validation |
-| Routing | Routing configuration analysis |
-| Management | Secure management access |
-| Port Security | Enabled on access ports |
+This project was developed as part of a Final Year Project (Projet de Fin d'Études) in the field of Computer Networks and Cybersecurity.
 
 ---
 
-## Future Improvements
+## 🚀 Future Improvements
 
-- Multi-vendor support (Juniper, Huawei, Arista)
-- Compliance checking (CIS Benchmarks)
-- Automated configuration remediation
-- Real-time network monitoring
+- AI-assisted configuration recommendations
+- Real-time device monitoring
+- Multi-vendor support
 - Network topology visualization
-- REST API
-- Docker deployment
-- Role-Based Access Control (RBAC)
-- SIEM integration
-- Cloud deployment
+- Configuration backup automation
+- Compliance scoring
+- CVE vulnerability integration
 
 ---
 
-## Educational Purpose
+## 📜 License
 
-This project was developed as a Final Year Project (PFE) to demonstrate practical applications of:
+This project is developed for educational purposes.
 
-- Network Automation
-- Artificial Intelligence
-- Cybersecurity
-- Cisco Network Administration
-- Python Programming
-- Web Development
-
----
-
-## Author
-
-**Rawen Khaddar**
-
-Bachelor's Degree in Computer Networks and Telecommunications
-
-Interested in:
-- Cybersecurity
-- Network Automation
-- Artificial Intelligence
-- DevSecOps
-
----
-
-## License
-
-This project is released under the MIT License.
+```
