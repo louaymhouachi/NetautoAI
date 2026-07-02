@@ -22,9 +22,7 @@
 - REST API
 
 ### Frontend
-- HTML5
-- CSS3
-- pyside6
+- PySide6 (Qt for Python)
 
 ### Network Automation
 - Netmiko
@@ -41,13 +39,14 @@
 
 ## 📂 Project Structure
 
-```
+```text
 NetAutoAI/
 │
 ├── app.py
 ├── requirements.txt
 ├── config.py
 ├── database/
+├── desktop_app/
 ├── static/
 │   ├── css/
 │   ├── js/
@@ -79,14 +78,14 @@ cd pfe_project-
 
 ### Create a virtual environment
 
-Windows
+**Windows**
 
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
-Linux / macOS
+**Linux / macOS**
 
 ```bash
 python3 -m venv venv
@@ -99,11 +98,61 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Run the application
+---
+
+# ▶️ Running the Application
+
+## 1. Start the Backend Server
+
+From the project root directory, activate the virtual environment and run:
 
 ```bash
 python app.py
 ```
+
+**Keep this terminal open** because it runs the backend server.
+
+---
+
+## 2. Start the Desktop Application (Frontend)
+
+Open **a second Command Prompt (CMD)**.
+
+Navigate to the project directory, activate the virtual environment again, then go to the desktop application folder:
+
+```bash
+venv\Scripts\activate
+cd desktop_app
+python main.py
+```
+
+The NetAutoAI desktop interface will launch and connect to the backend server.
+
+---
+
+## 🔐 Default Administrator Account
+
+Use the following credentials to log in for the first time:
+
+| Username | Password |
+|----------|----------|
+| **admin** | **admin123** |
+
+> **Note:** It is recommended to change the default administrator password after the first login.
+
+---
+
+## 📖 How to Use
+
+After logging in, you can:
+
+- Upload Cisco configuration files.
+- Connect to Cisco devices via SSH.
+- Analyze network configurations.
+- Detect security vulnerabilities and misconfigurations.
+- Review VLAN, ACL, Routing, NAT, DHCP, DNS, and Interface configurations.
+- Generate detailed security and configuration reports.
+- Export generated reports.
 
 ---
 
@@ -152,14 +201,15 @@ Generates professional reports including:
 - ACL Analysis
 - Security Findings
 - Recommendations
+
 ---
 
 ## 👨‍💻 Authors
 
-- Louay Mhouachi
-- Rawen Khaddar
+- **Louay Mhouachi**
+- **Rawen Khaddar**
 
-Final Year Project (PFE)
+**Final Year Project (PFE)**
 
 ---
 
@@ -184,5 +234,3 @@ This project was developed as part of a Final Year Project (Projet de Fin d'Étu
 ## 📜 License
 
 This project is developed for educational purposes.
-
-```
